@@ -1,0 +1,12 @@
+#img{
+    width:200px ;
+    height:200px;
+    border: 1px solid black;
+   object-fit: cover;
+   
+}
+
+body{
+
+    margin:70px;
+}

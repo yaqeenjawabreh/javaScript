@@ -3,8 +3,8 @@ function reverses(num){
   console.log(num.split('').reverse().join(''));
 }
 
-let num=prompt("Enter number");
-reverses(num);
+let numq1=prompt("Enter number");
+reverses(numq1);
 
 // //------------Q2-----------
  function isOddEven(){
@@ -33,8 +33,8 @@ function insertsDashes(num){
    console.log(num2);
 }
 
-let num=prompt("Enter number");
-insertsDashes(num);
+let numq3=prompt("Enter number");
+insertsDashes(numq3);
 
 //---------Q4----------
 function Agechecker(Age){

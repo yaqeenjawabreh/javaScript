@@ -1,0 +1,15 @@
+#btn{
+  background-color:aliceblue;
+  color: black;
+}
+#form{
+  border: 1px solid black;
+  width: fit-content;
+  padding: 20px;
+  margin: 50px;
+}
+
+p{
+  color: red;
+  margin: 50px;
+}
