@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="styleSheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <br>
+            <span class="valid"></span>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <br>
+            <span class="valid"></span>
+            <br><br>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone">
+            <br>
+            <span class="valid"></span>
+            <br><br>
+            <label for="menu">menu</label>
+            <select id="order" name="menu">
+                <option>Burger</option>
+                <option>Shawarma</option>
+                <option>Zinger</option>
+                <option>pizza</option>
+            </select>
+            <br><br>
+            <button type="button" onclick="Validation()">submit order</button>
+        </fieldset>
+    </form>
+    <div id="output"></div>
+  <script src="script.js"></script>  
+</body>
+</html>
