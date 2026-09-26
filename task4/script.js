@@ -4,25 +4,33 @@ let phone=document.getElementById("phone");
 let menu=document.getElementById("order");
 let validMassage=document.getElementsByClassName("valid");
 let output=document.getElementById("output");
-let nameRegex=/^\S+$/ig;
-let passwordRegex=/(?=.*\d).{8,}/ig;
-let phoneRegex=/^07\d{8}$/ig; 
-let valid=true;
+let nameRegex=/^\S+$/i;
+let passwordRegex=/(?=.*\d).{8,}/i;
+let phoneRegex=/^07\d{8}$/i; 
 
 function Validation(){
-if (!nameRegex.test(name.value)){
-  validMassage[0].innerHTML="Enter name with no spaces";
-}
-if (!passwordRegex.test(password.value)){
-  validMassage[1].innerHTML="your Password must have at least 8 characters and contains at least one number";
-}
-if (!phoneRegex.test(phone.value)){
-  validMassage[2].innerHTML="your phone must have exactly 10 digits and starts with 07";
+  for(let i=0;i<validMassage.length;i++){
+    validMassage[i].innerHTML = "";
+  }
+  let isNameValid = nameRegex.test(name.value);
+  let isPasswordValid = passwordRegex.test(password.value);
+  let isPhoneValid = phoneRegex.test(phone.value);
+if (!isNameValid) {
+    validMassage[0].innerHTML = "Enter name with no spaces";
+  } 
+  if (!isPasswordValid) {
+    validMassage[1].innerHTML = "Your password must have at least 8 characters and contain at least one number";
+  }
+  if (!isPhoneValid) {
+    validMassage[2].innerHTML = "Your phone must have exactly 10 digits and start with 07";
+  }
+if (isNameValid && isPasswordValid && isPhoneValid) {
+    sessionStorage.setItem("userName", name.value);
+    localStorage.setItem("Order", menu.value);
+    
+    output.innerHTML = "Welcome, " + sessionStorage.getItem("userName") +
+      "<br><br>Saved Order: " + localStorage.getItem("Order") +
+      "<br><br>Saved Username: " + sessionStorage.getItem("userName");
+  }
 }
 
-
-    localStorage.setItem("Order",menu.value);
-    sessionStorage.setItem("userName",name.value);
-    output.innerHTML=" Welcome,"+JSON.parse(sessionStorage.getItem("userName"))
-    +"<br>Saved Order:"+JSON.parse(localStorage.getItem("Order"))+"Saved Username: "+JSON.parse(sessionStorage.getItem("userName"));
-}
